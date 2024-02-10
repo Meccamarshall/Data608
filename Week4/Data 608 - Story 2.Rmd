@@ -1,0 +1,267 @@
+---
+title: "Story 2 - Data 608"
+author: "Shamecca Marshall"
+date: "2024-02-08"
+output: html_document
+---
+
+```{r eval=FALSE, include=FALSE}
+install.packages("fredr")
+install.packages("devtools")
+devtools::install_github("sboysel/fredr")
+```
+
+## Loading the libaries and setting API Key
+```{r}
+library(fredr)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(gridExtra)
+library(tidyr)
+fredr_set_key("9e5a59c0d108491bcf3bd175e017d034")
+```
+
+## Loading Data files from FRED
+To conduct the analysis, we are going to retrieve datasets concerning the Unemployment Rate, Inflation Rate, Consumer Price Index, and Price Consumption Expenditures. The latter three datasets serve as indicators for inflation.
+```{r}
+# Retrieve Unemployment Rate data
+unrate_data <- fredr(
+  series_id = "UNRATE",
+  observation_start = as.Date("1999-01-01"),
+  observation_end = as.Date("2024-01-01"))
+
+# Retrieve Consumer Price Index (CPI) data
+cpi_data <- fredr(
+  series_id = "CPIAUCNS",
+  observation_start = as.Date("1999-01-01"),
+  observation_end = as.Date("2024-01-01"))
+
+# Retrieve Personal Consumption Expenditures (PCE) data
+pce_data <- fredr(
+  series_id = "PCE",
+  observation_start = as.Date("1999-01-01"),
+  observation_end = as.Date("2024-01-01"))
+
+# Retrieve Inflation Rate
+inflation_data <- fredr(
+  series_id = "FPCPITOTLZGUSA",
+  observation_start = as.Date("1999-01-01"),
+  observation_end = as.Date("2024-01-01"))
+```
+
+## Unemployment and Inflation Rates
+The fluctuations in both of these rates suggest that these two economic indicators are volatile forces beyond the control of the Federal Reserve (FED). Over a 25 year period, they have oscillated between highs and lows in reaction to economic forces outside the FED's influence.
+```{r}
+# Combine the Unemployment Rate and Inflation Rate data to create a single data frame
+combined_data <- bind_rows(
+  unrate_data %>% mutate(type = "Unemployment Rate"),
+  inflation_data %>% mutate(type = "Inflation Rate")
+)
+
+# Generate a single plot displaying both the Unemployment Rate and Inflation Rate lines overlaid.
+overlay_plot <- ggplot(combined_data, aes(x = date, y = value, color = type)) +
+  geom_line() +
+  ggtitle("Comparison of Unemployment and Inflation Rates 1999 - 2024") +
+  ylab("Rate (%)") +
+  scale_color_manual(values = c("#ffc8d2", "#363131"),
+                     breaks = c("Unemployment Rate", "Inflation Rate")) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),  ## Remove x-axis label
+        plot.title = element_text(size = 12),
+        axis.title.y = element_text(size = 10),
+        legend.title = element_blank()) + 
+  annotate("text", x = as.Date("2024-01-01"), y = Inf, label = "Over a 30-year period, the FED appears to be unable to control rate swings.", 
+           hjust = 1.125, vjust = 1, size = 3, color = "black")
+## Display the overlay plot
+print(overlay_plot)
+```
+
+## At first glance, this pattern appears similar with CPI and PCE indicators.
+
+Taking into account CPI and PCE indicators reveals a consistent upward trend over 25 years. Despite occasional successes in managing inflation and unemployment, consumer expenses have continued to rise steadily over decades. Does this signify a failure in the Fed's mission?
+
+```{r}
+# Plot Unemployment Rate with Kicker
+unrate_plot <- ggplot(unrate_data, aes(x = date, y = value)) +
+  geom_line() +
+  ggtitle("Unemployment Rate") +
+  annotate("text", x = max(unrate_data$date), y = Inf, label = "Unemployment % Fluctuates Over 25 Years", 
+           hjust = 2.68, vjust = 1.0, size = 3, color = "#f99965") +
+  ylab("UNR (%)") +
+  ylim(0, max(unrate_data$value) + 1) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank())+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        plot.title = element_text(size = 10),
+        axis.title.y = element_text(size = 8))
+
+# Plot Consumer Price Index with Kicker
+cpi_plot <- ggplot(cpi_data, aes(x = date, y = value)) +
+  geom_line() +
+  ggtitle("Consumer Price Index") +
+  annotate("text", x = max(cpi_data$date), y = Inf, label = "CPI Steadily Increases Over 25 Years", 
+           hjust = 3.18, vjust = 1.0, size = 3, color = "#f99965") +
+  ylab("CPI ($)") +
+  ylim(0, max(cpi_data$value) + 1) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank())+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        plot.title = element_text(size = 10),
+        axis.title.y = element_text(size = 8))
+
+# Plot Personal Consumption Expenditures with Kicker
+pce_plot <- ggplot(pce_data, aes(x = date, y = value / 1000)) +  ## Divide by 1000
+  geom_line() +
+  ggtitle("Personal Consumption Expenditures") +
+  annotate("text", x = max(pce_data$date), y = Inf, label = "PCE Steadily Increases Over 30 Years", 
+           hjust = 3.17, vjust = 1.0, size = 3, color = "#f99965") +
+  ylab("PCE ($ 000's)") +  # Update label
+  ylim(0, max(pce_data$value / 1000) + 1) +  ## Divide by 1000
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        plot.title = element_text(size = 10),
+        axis.title.y = element_text(size = 8))
+
+# Plot Inflation Rate with Kicker
+inflation_plot <- ggplot(inflation_data, aes(x = date, y = value)) +
+  geom_line() +
+  ggtitle("Inflation Rate") +
+  annotate("text", x = max(inflation_data$date), y = Inf, label = "Inflation Rate Fluctuates Over 25 Years", 
+           hjust = 2.97, vjust = 1.0, size = 3, color = "#f99965") +
+  ylab("IR (%)") +
+  ylim(0, max(inflation_data$value) + 1) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        plot.title = element_text(size = 10),
+        axis.title.y = element_text(size = 8))
+
+# Arrange the four plots in a single column grid
+grid.arrange(unrate_plot,  cpi_plot, pce_plot, inflation_plot, ncol = 1)
+```
+
+## Yearly Unemployment, Inflation, CPI, and PCE Economic Indicators rates
+
+The Federal Reserve's objective isn't to maintain rates at zero or entirely halt inflation. Analyzing the rates of change for all four economic indicators over 25 years reveals that the Fed has kept these rates close to a baseline just above zero for all years except during recession periods. This suggests that while the Fed may not prevent recessionary events, it can effectively manage recovery by restoring these rates to baseline levels.
+
+```{r}
+# Function to calculate percentage change from previous year
+calculate_pct_change <- function(data) {
+  data %>%
+    arrange(date) %>%
+    mutate(year = year(date)) %>%
+    group_by(year) %>%
+    summarise(value = mean(value, na.rm = TRUE)) %>%
+    ungroup() %>%
+    mutate(pct_change = (value / lag(value) - 1) * 100) %>%
+    filter(!is.na(pct_change))
+}
+
+## Calculate percentage change for each data set
+unrate_pct_change <- calculate_pct_change(unrate_data)
+cpi_pct_change <- calculate_pct_change(cpi_data)
+pce_pct_change <- calculate_pct_change(pce_data)
+inflation_pct_change <- calculate_pct_change(inflation_data)
+
+## Create the combined data set for the percentage changes
+combined_pct_change <- bind_rows(
+  unrate_pct_change %>% mutate(type = "Unemployment Rate"),
+  cpi_pct_change %>% mutate(type = "Consumer Price Index"),
+  pce_pct_change %>% mutate(type = "Personal Consumption Expenditures"),
+  inflation_pct_change %>% mutate(type = "Inflation Rate")
+)
+
+## Add custom labels to the plot
+recession_labels <- data.frame(
+  year = c(2001, 2008, 2020, 2024),
+  label = c("DotCom Recession", "Housing Market Recession", "COVID Recession", "Post COVID"),
+  pct_change = c(20, -625, 925, 275)
+)
+
+## Update the color scale order
+color_scale <- scale_color_manual(
+  values = c("#f6cde2", "#b67295", "#a0d4a6", "#709874"),
+  breaks = c("Inflation Rate", "Unemployment Rate", "Personal Consumption Expenditures", "Consumer Price Index")
+)
+
+## Create a single plot that combines the four lines and adds recession labels
+combined_plot <- ggplot(combined_pct_change, aes(x = year, y = pct_change, color = type)) +
+  geom_line() +
+  geom_text(data = recession_labels, aes(x = year, y = pct_change, label = label), 
+            vjust = -1, hjust = 0.5, size = 2.5, inherit.aes = FALSE) + 
+  ggtitle("Yearly Percentage Change in Economic Indicators 1999 - 2024") +
+  ylab("Percentage Change (%)") +
+  color_scale + 
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        plot.title = element_text(size = 12),
+        axis.title.y = element_text(size = 10),
+        legend.title = element_blank()) + 
+  annotate("text", x = Inf, y = Inf, label = "FED returns to baseline change rate - particularly after recession events.", 
+           hjust = 1.1, vjust = .9, size = 3, color = "black")
+
+## Display the combined plot
+print(combined_plot)
+```
+
+## Year over Year Inflation vs Unemployment Rates of Change
+
+When the rates of change year over year are compared, one can see that the size of these changes have been largely kept at predictable and steady target levels at or slightly above zero for most of the 25 year period for inflation and unemployment.
+
+Arguably, the most recent recessions triggered by global conditions have destabilized this trend and it appears the FED is in the midst of attempting to return the rates of change back to baseline after sharp economic recoveries.
+
+```{r}
+## Function to calculate percentage change from previous year
+calculate_pct_change <- function(data) {
+  data %>%
+    arrange(date) %>%
+    mutate(year = lubridate::year(date)) %>%
+    group_by(year) %>%
+    summarise(value = mean(value, na.rm = TRUE)) %>%
+    ungroup() %>%
+    mutate(pct_change = (value / lag(value) - 1) * 100) %>%
+    filter(!is.na(pct_change))}
+
+## Calculate percentage change for each data set
+inflation_pct_change <- calculate_pct_change(inflation_data)
+
+## Combine the percentage change data into a single data frame
+combined_pct_change <- bind_rows(
+  unrate_pct_change %>% mutate(type = "Unemployment Rate"),
+  inflation_pct_change %>% mutate(type = "Inflation Rate"))
+
+## Calculate the yearly average of percentage change
+yearly_avg_pct_change <- combined_pct_change %>%
+  group_by(year) %>%
+  summarise(avg_pct_change = mean(pct_change, na.rm = TRUE))
+
+## Add custom labels to the plot
+recession_labels <- data.frame(
+  year = c(2001, 2008, 2020, 2024),
+  label = c("DotCom Recession", "Housing Market Recession", "COVID Recession", "Post COVID"),
+  pct_change = c(20, -625, 925, 275))
+
+## Create a single plot that overlays the year-over-year percentage change
+overlay_pct_change_plot <- ggplot(combined_pct_change, aes(x = year, y = pct_change, color = type)) +
+  geom_line() +
+  geom_line(data = yearly_avg_pct_change, aes(x = year, y = avg_pct_change, color = "Average"), linetype = "dashed") +
+  geom_text(data = recession_labels, aes(x = year, y = pct_change, label = label), 
+            vjust = -1, hjust = 0.5, size = 2.5, inherit.aes = FALSE) +  ## Add custom labels
+  ggtitle("Year-over-Year Percentage Change in Unemployment and Inflation Rates 1999 - 2024") +
+  ylab("Percentage Change (%)") +
+  scale_color_manual(name = "", 
+                     values = c("Unemployment Rate" = "#ffc8d2", "Inflation Rate" = "#363131", "Average" = "#856873"),
+                     breaks = c( "Inflation Rate", "Average", "Unemployment Rate")) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),  ## Remove x-axis label
+        plot.title = element_text(size = 12),
+        axis.title.y = element_text(size = 10)) +
+  annotate("text", x = Inf, y = Inf, label = "The rate of change have largely held steady and predictable.", 
+           hjust = 1.43, vjust = 1, size = 3, color = "black")
+
+## Display the overlay plot
+print(overlay_pct_change_plot)
+```
