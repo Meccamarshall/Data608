@@ -1,0 +1,202 @@
+﻿Job Title,State,Annual Salary,Monthly Pay,Weekly Pay,Hourly Wage
+Data Scientist,New York,"136,172","11,347","2,618",65
+Data Scientist,Vermont,"133,828","11,152","2,573",64
+Data Scientist,California,"131,441","10,953","2,527",63
+Data Scientist,Maine,"127,644","10,637","2,454",61
+Data Scientist,Idaho,"126,275","10,522","2,428",61
+Data Scientist,Washington,"125,289","10,440","2,409",60
+Data Scientist,Pennsylvania,"124,713","10,392","2,398",60
+Data Scientist,Massachusetts,"123,188","10,265","2,369",59
+Data Scientist,Alaska,"122,407","10,200","2,353",59
+Data Scientist,New Jersey,"121,955","10,162","2,345",59
+Data Scientist,New Hampshire,"121,666","10,138","2,339",58
+Data Scientist,Oregon,"121,011","10,084","2,327",58
+Data Scientist,North Dakota,"120,890","10,074","2,324",58
+Data Scientist,Wisconsin,"120,117","10,009","2,309",58
+Data Scientist,Wyoming,"119,040","9,920","2,289",57
+Data Scientist,Hawaii,"118,595","9,882","2,280",57
+Data Scientist,Colorado,"117,956","9,829","2,268",57
+Data Scientist,Indiana,"116,954","9,746","2,249",56
+Data Scientist,Nevada,"115,741","9,645","2,225",56
+Data Scientist,New Mexico,"115,421","9,618","2,219",55
+Data Scientist,Minnesota,"115,258","9,604","2,216",55
+Data Scientist,Arizona,"114,536","9,544","2,202",55
+Data Scientist,South Dakota,"114,254","9,521","2,197",55
+Data Scientist,Montana,"112,811","9,400","2,169",54
+Data Scientist,Ohio,"112,255","9,354","2,158",54
+Data Scientist,Rhode Island,"112,085","9,340","2,155",54
+Data Scientist,Delaware,"111,877","9,323","2,151",54
+Data Scientist,Alabama,"111,402","9,283","2,142",54
+Data Scientist,Virginia,"110,662","9,221","2,128",53
+Data Scientist,Connecticut,"109,897","9,158","2,113",53
+Data Scientist,Iowa,"109,690","9,140","2,109",53
+Data Scientist,Illinois,"108,858","9,071","2,093",52
+Data Scientist,Mississippi,"108,712","9,059","2,090",52
+Data Scientist,Maryland,"108,449","9,037","2,085",52
+Data Scientist,Tennessee,"107,174","8,931","2,061",52
+Data Scientist,Utah,"106,899","8,908","2,055",51
+Data Scientist,Nebraska,"106,424","8,868","2,046",51
+Data Scientist,Missouri,"105,000","8,750","2,019",50
+Data Scientist,South Carolina,"103,937","8,661","1,998",50
+Data Scientist,Georgia,"103,779","8,648","1,995",50
+Data Scientist,Oklahoma,"103,063","8,588","1,981",50
+Data Scientist,Texas,"102,927","8,577","1,979",49
+Data Scientist,Kansas,"102,344","8,528","1,968",49
+Data Scientist,North Carolina,"101,792","8,482","1,957",49
+Data Scientist,Louisiana,"100,631","8,385","1,935",48
+Data Scientist,Kentucky,"97,776","8,148","1,880",47
+Data Scientist,Michigan,"97,737","8,144","1,879",47
+Data Scientist,West Virginia,"96,317","8,026","1,852",46
+Data Scientist,Arkansas,"92,891","7,740","1,786",45
+Data Scientist,Florida,"91,843","7,653","1,766",44
+Big Data Engineer,Washington,"153,093","12,757","2,944",74
+Big Data Engineer,Delaware,"143,398","11,949","2,757",69
+Big Data Engineer,Virginia,"140,931","11,744","2,710",68
+Big Data Engineer,Maryland,"138,779","11,564","2,668",67
+Big Data Engineer,New York,"138,605","11,550","2,665",67
+Big Data Engineer,Vermont,"135,746","11,312","2,610",65
+Big Data Engineer,Nebraska,"135,535","11,294","2,606",65
+Big Data Engineer,Oklahoma,"131,256","10,938","2,524",63
+Big Data Engineer,California,"131,050","10,920","2,520",63
+Big Data Engineer,Massachusetts,"129,448","10,787","2,489",62
+Big Data Engineer,Alaska,"128,300","10,691","2,467",62
+Big Data Engineer,Maine,"127,654","10,637","2,454",61
+Big Data Engineer,Pennsylvania,"126,958","10,579","2,441",61
+Big Data Engineer,Oregon,"126,544","10,545","2,433",61
+Big Data Engineer,North Dakota,"126,491","10,540","2,432",61
+Big Data Engineer,Idaho,"125,614","10,467","2,415",60
+Big Data Engineer,New Jersey,"125,538","10,461","2,414",60
+Big Data Engineer,Texas,"124,995","10,416","2,403",60
+Big Data Engineer,Colorado,"124,178","10,348","2,388",60
+Big Data Engineer,Hawaii,"124,128","10,344","2,387",60
+Big Data Engineer,Wisconsin,"124,019","10,334","2,384",60
+Big Data Engineer,New Hampshire,"123,642","10,303","2,377",59
+Big Data Engineer,Wyoming,"121,359","10,113","2,333",58
+Big Data Engineer,Nevada,"121,313","10,109","2,332",58
+Big Data Engineer,South Dakota,"119,548","9,962","2,299",57
+Big Data Engineer,Indiana,"119,517","9,959","2,298",57
+Big Data Engineer,Minnesota,"119,435","9,952","2,296",57
+Big Data Engineer,New Mexico,"119,138","9,928","2,291",57
+Big Data Engineer,Rhode Island,"117,210","9,767","2,254",56
+Big Data Engineer,Arizona,"117,046","9,753","2,250",56
+Big Data Engineer,Ohio,"116,196","9,683","2,234",56
+Big Data Engineer,Montana,"115,282","9,606","2,216",55
+Big Data Engineer,Connecticut,"114,570","9,547","2,203",55
+Big Data Engineer,Illinois,"114,546","9,545","2,202",55
+Big Data Engineer,Iowa,"113,948","9,495","2,191",55
+Big Data Engineer,Alabama,"113,842","9,486","2,189",55
+Big Data Engineer,Mississippi,"113,574","9,464","2,184",55
+Big Data Engineer,Tennessee,"110,935","9,244","2,133",53
+Big Data Engineer,Utah,"110,851","9,237","2,131",53
+Big Data Engineer,Missouri,"110,618","9,218","2,127",53
+Big Data Engineer,South Carolina,"109,476","9,123","2,105",53
+Big Data Engineer,North Carolina,"107,217","8,934","2,061",52
+Big Data Engineer,Kansas,"106,931","8,910","2,056",51
+Big Data Engineer,Georgia,"106,054","8,837","2,039",51
+Big Data Engineer,Louisiana,"104,277","8,689","2,005",50
+Big Data Engineer,Michigan,"102,906","8,575","1,978",49
+Big Data Engineer,Kentucky,"102,812","8,567","1,977",49
+Big Data Engineer,West Virginia,"98,052","8,171","1,885",47
+Big Data Engineer,Arkansas,"97,745","8,145","1,879",47
+Big Data Engineer,Florida,"93,857","7,821","1,804",45
+Data Analyst,New York,"98,166","8,180","1,887",47
+Data Analyst,Pennsylvania,"89,890","7,490","1,728",43
+Data Analyst,New Hampshire,"87,898","7,324","1,690",42
+Data Analyst,New Jersey,"86,566","7,213","1,664",42
+Data Analyst,Wyoming,"85,631","7,135","1,646",41
+Data Analyst,Washington,"85,515","7,126","1,644",41
+Data Analyst,Wisconsin,"84,902","7,075","1,632",41
+Data Analyst,Massachusetts,"84,899","7,074","1,632",41
+Data Analyst,Alaska,"84,677","7,056","1,628",41
+Data Analyst,Oregon,"83,991","6,999","1,615",40
+Data Analyst,Indiana,"83,857","6,988","1,612",40
+Data Analyst,North Dakota,"83,837","6,986","1,612",40
+Data Analyst,Hawaii,"82,209","6,850","1,580",40
+Data Analyst,Arizona,"82,123","6,843","1,579",39
+Data Analyst,New Mexico,"81,613","6,801","1,569",39
+Data Analyst,Colorado,"81,074","6,756","1,559",39
+Data Analyst,Minnesota,"81,053","6,754","1,558",39
+Data Analyst,Montana,"80,886","6,740","1,555",39
+Data Analyst,Nevada,"80,065","6,672","1,539",38
+Data Analyst,Alabama,"79,876","6,656","1,536",38
+Data Analyst,South Dakota,"79,235","6,602","1,523",38
+Data Analyst,Vermont,"79,108","6,592","1,521",38
+Data Analyst,Ohio,"79,063","6,588","1,520",38
+Data Analyst,Rhode Island,"77,796","6,483","1,496",37
+Data Analyst,Iowa,"76,863","6,405","1,478",37
+Data Analyst,Delaware,"76,760","6,396","1,476",37
+Data Analyst,Connecticut,"76,617","6,384","1,473",37
+Data Analyst,Virginia,"75,872","6,322","1,459",36
+Data Analyst,Mississippi,"75,561","6,296","1,453",36
+Data Analyst,Tennessee,"75,487","6,290","1,451",36
+Data Analyst,Utah,"75,098","6,258","1,444",36
+Data Analyst,Illinois,"74,872","6,239","1,439",36
+Data Analyst,Georgia,"74,409","6,200","1,430",36
+Data Analyst,Maryland,"74,394","6,199","1,430",36
+Data Analyst,California,"74,169","6,180","1,426",36
+Data Analyst,Nebraska,"72,966","6,080","1,403",35
+Data Analyst,Maine,"72,629","6,052","1,396",35
+Data Analyst,Missouri,"72,093","6,007","1,386",35
+Data Analyst,South Carolina,"71,384","5,948","1,372",34
+Data Analyst,Kansas,"71,124","5,927","1,367",34
+Data Analyst,Idaho,"70,811","5,900","1,361",34
+Data Analyst,Louisiana,"70,765","5,897","1,360",34
+Data Analyst,Oklahoma,"70,662","5,888","1,358",34
+Data Analyst,Texas,"70,205","5,850","1,350",34
+Data Analyst,North Carolina,"69,910","5,825","1,344",34
+Data Analyst,West Virginia,"69,422","5,785","1,335",33
+Data Analyst,Kentucky,"67,321","5,610","1,294",32
+Data Analyst,Michigan,"67,165","5,597","1,291",32
+Data Analyst,Florida,"65,851","5,487","1,266",32
+Data Analyst,Arkansas,"63,890","5,324","1,228",31
+Business Analyst,Washington,"115,300","9,608","2,217",55
+Business Analyst,Delaware,"108,000","9,000","2,076",52
+Business Analyst,Virginia,"106,140","8,845","2,041",51
+Business Analyst,Maryland,"104,520","8,710","2,010",50
+Business Analyst,New York,"104,389","8,699","2,007",50
+Business Analyst,Vermont,"102,235","8,519","1,966",49
+Business Analyst,Nebraska,"102,077","8,506","1,963",49
+Business Analyst,Oklahoma,"98,854","8,237","1,901",48
+Business Analyst,California,"98,699","8,224","1,898",47
+Business Analyst,Massachusetts,"97,492","8,124","1,874",47
+Business Analyst,Alaska,"96,628","8,052","1,858",46
+Business Analyst,Maine,"96,141","8,011","1,848",46
+Business Analyst,Pennsylvania,"95,618","7,968","1,838",46
+Business Analyst,Oregon,"95,305","7,942","1,832",46
+Business Analyst,North Dakota,"95,265","7,938","1,832",46
+Business Analyst,Idaho,"94,604","7,883","1,819",45
+Business Analyst,New Jersey,"94,548","7,879","1,818",45
+Business Analyst,Texas,"94,139","7,844","1,810",45
+Business Analyst,Colorado,"93,523","7,793","1,798",45
+Business Analyst,Hawaii,"93,485","7,790","1,797",45
+Business Analyst,Wisconsin,"93,403","7,783","1,796",45
+Business Analyst,New Hampshire,"93,120","7,760","1,790",45
+Business Analyst,Wyoming,"91,400","7,616","1,757",44
+Business Analyst,Nevada,"91,366","7,613","1,757",44
+Business Analyst,South Dakota,"90,036","7,503","1,731",43
+Business Analyst,Indiana,"90,013","7,501","1,731",43
+Business Analyst,Minnesota,"89,950","7,495","1,729",43
+Business Analyst,New Mexico,"89,727","7,477","1,725",43
+Business Analyst,Rhode Island,"88,275","7,356","1,697",42
+Business Analyst,Arizona,"88,152","7,346","1,695",42
+Business Analyst,Ohio,"87,511","7,292","1,682",42
+Business Analyst,Montana,"86,823","7,235","1,669",42
+Business Analyst,Connecticut,"86,287","7,190","1,659",41
+Business Analyst,Illinois,"86,269","7,189","1,659",41
+Business Analyst,Iowa,"85,818","7,151","1,650",41
+Business Analyst,Alabama,"85,739","7,144","1,648",41
+Business Analyst,Mississippi,"85,536","7,128","1,644",41
+Business Analyst,Tennessee,"83,549","6,962","1,606",40
+Business Analyst,Utah,"83,487","6,957","1,605",40
+Business Analyst,Missouri,"83,310","6,942","1,602",40
+Business Analyst,South Carolina,"82,451","6,870","1,585",40
+Business Analyst,North Carolina,"80,749","6,729","1,552",39
+Business Analyst,Kansas,"80,533","6,711","1,548",39
+Business Analyst,Georgia,"79,873","6,656","1,536",38
+Business Analyst,Louisiana,"78,535","6,544","1,510",38
+Business Analyst,Michigan,"77,503","6,458","1,490",37
+Business Analyst,Kentucky,"77,431","6,452","1,489",37
+Business Analyst,West Virginia,"73,847","6,153","1,420",36
+Business Analyst,Arkansas,"73,616","6,134","1,415",35
+Business Analyst,Florida,"70,687","5,890","1,359",34
+Data Architect,,,,,
